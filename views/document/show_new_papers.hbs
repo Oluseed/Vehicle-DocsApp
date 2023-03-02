@@ -1,0 +1,78 @@
+<div class="container2">
+    <!--Navigation-->
+    {{> _navigation}}
+
+    <!--Main-->
+    <div class="main">
+
+        <!--topbar-->
+        {{> _topbar}}
+
+        <!--data list-->
+        <div class="details">
+            <div class="recentOrders">
+                <div class="cardHeader">
+                    <h2>View Records</h2>
+                    <a href="../pages/view_records.html" class="btn">View All</a>
+                </div>
+                <div>
+                    <div>Vehicle:</div>
+                    <div>Vehicle Name</div>
+                </div>
+                <br>
+                <div>
+                    <div>Type of document:</div>
+                    {{docType}} {{status}}
+                    <div>{{document.docType}}</div>
+                </div>
+                <br>
+                <div>
+                    <div>Name On Paper</div>
+                    <div>{{document.data.doc_name}}</div>
+                </div>
+                <br>
+                <div>
+                    <div>Date of Birth:</div>
+                    <div>{{document.data.dob}}</div>
+                </div>
+                <br>
+                <div>
+                    <div>Contact Address:</div>
+                    <div>{{document.data.address}}</div>
+                </div>
+                <br>
+                <div>
+                    <div>Phone No 1:</div>
+                    <div>{{document.data.phone1}}</div>
+                </div>
+                <br>
+                <div>
+                    <div>Phone No 2:</div>
+                    <div>{{document.data.phone2}}</div>
+                </div>
+                <br>
+                <div>
+                    <div>Type of Plate:</div>
+                    <div>{{document.data.plateType}}</div>
+                </div>
+                <br>
+                <div>
+                    <div>Delivery Location:</div>
+                    <div>{{document.data.location}}</div>
+                </div>
+                <br>
+                <div>
+                    <div>Status:</div>
+                    <div>{{document.data.status}}</div>
+                </div>
+                <br>
+                <div>
+                    <div>Date Submitted:</div>
+                    <div>{{document.data.createdAt}}</div>
+                </div>
+                <br>
+            </div>
+        </div>
+
+    </div>
+</div>

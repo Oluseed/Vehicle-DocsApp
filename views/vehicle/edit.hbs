@@ -1,0 +1,35 @@
+<div class="container2">
+    <!--Navigation-->
+    {{> _navigation}}
+
+    <!--Main-->
+    <div class="main">
+
+        <!--topbar-->
+        {{> _topbar}}
+
+        <div class="formcard">
+            <div class="formcardheader">
+                <h2>Edit Registered Vehicle</h2>
+            </div>
+
+            <br><br>
+
+            <form action="/vehicle/{{vehicle._id}}" method="POST">
+                <input type="hidden" name="_method" value="PUT">
+                <input type="text" name="brand" placeholder="Vehicle Brand e.g. Toyota" value="{{vehicle.brand}}" title="Vehicle Brand">
+                <input type="text" name="model" placeholder="Vehicle Model e.g. Corolla" value="{{vehicle.model}}" title="Vehicle Model">
+                <input type="text" name="year" placeholder="Year of Make" value="{{vehicle.year}}" title="Year of Make">
+                <input type="text" name="plateNo" placeholder="Plate Number" value="{{vehicle.plateNo}}" title="Plate Number">
+                <input type="text" name="engineNo" placeholder="Engine Number" value="{{vehicle.engineNo}}" title="Engine Number">
+                <input type="text" name="chassisNo" placeholder="Chassis Number" value="{{vehicle.chassisNo}}" title="Name">
+                <input type="text" name="color" placeholder="Select Color" value="{{vehicle.color}}" title="Color">
+                <input type="text" name="location" title="Delivery Location" value="{{vehicle.location}}" placeholder="Delivery Location">
+                <input type="submit" value="Add Vehicle" placeholder="" title="Submit Form">
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,249 @@
+<main>
+        <!--Navbar-->
+        <div class="header">
+            <img src="/img/vehdoc.png" alt="">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="">About Us</a></li>
+                <li><a href="">Contact Us</a></li>
+
+            </ul>
+
+        </div>
+
+        <!--Welcome Page-->
+        <div class="welcome">
+            <div class="welcome-image">
+                <img src="/img/pexels-dan-cristian-pădureț-1476321.jpg" alt="Welcome Image">
+            </div>
+
+            <div class="welcome-intro">
+                <h2>Vehicle papers, made easy.</h2>
+                <p>Vehdoc handles online vehicle registration and automobile papers renewal that is less expensive, automated, and includes
+                home/office delivery.</p>
+                </p>
+            
+               <div class="flex">
+                <button onclick="document.getElementById('id01').style.display='block'" style="width:150px;">Sign Up</button>
+                <button onclick="document.getElementById('id02').style.display='block'" style="width:150px;">Login</button>
+               </div>
+            </div>
+
+        </div>
+
+        <!--Intro-->
+        <div class="introcard">
+            <div class="card">
+
+
+                <p>You can register a new automobile, motorcycle, or truck or update your vehicle registration documents (Vehicle License,
+                Road Worthiness, Third-Party Insurance, Hackney Permit or Comprehensive Insurance)
+                </p>
+
+                <img src="/svg/undraw_select_option_re_u4qn.svg" alt="">
+            </div>
+
+            <div class="card">
+                <p>You may enter your vehicle type and a few other data, and our platform will calculate the cost for either paper renewal,
+                vehicle registration, or change, whether you have a saloon car, SUV, motorcycle, or even a truck.
+                of ownership or other documents</p>
+                <img src="/svg/undraw_by_my_car_0dds.svg" alt="">
+            </div>
+
+            <div class="card">
+                <p>Using your card or a bank transfer, you can quickly and conveniently pay for the vehicle paperwork you wish to execute
+                online. </p>
+                <img src="/svg/undraw_online_payments_re_y8f2.svg" alt="">
+            </div>
+
+        </div>
+
+        <!--Testimonial-->
+        <div class="maintestcard">
+            <div class="testcard">
+                <div class="gridcard">
+                    <div class="gridcard-details">
+                        <img src="/img/IMG-20221215-WA0029 (2).jpg" alt="Client-image">
+                        <p class="sm">Akinjide Ayomide</p>
+                    </div>
+                    <p>I cannot believe it. I can be sure that you guys will renew all of my other autos and buddies. I'm very grateful.
+                    </p>
+                </div>
+
+                <div class="gridcard">
+                    <div class="gridcard-details">
+                        <img src="/img/IMG-20221215-WA0029 (2).jpg" alt="Client-image">
+                        <p class="sm">Oluseed Ltd</p>
+                    </div>
+                    <p>I am satisfied with your service, and I can guarantee that your business will handle all of our paperwork for auto
+                    registration and document renewal.</p>
+                </div>
+
+                <div class="gridcard">
+                    <div class="gridcard-details">
+                        <img src="/img/IMG-20221215-WA0029 (2).jpg" alt="Client-image">
+                        <p class="sm">Akinjide Ayomide</p>
+                    </div>
+                    <p>Excellent! I'm giving out my referral code to everyone I know. This is a vital service! You guys are fantastic.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!--Footer-->
+        <footer>
+            <div class="social_media">
+                <h3 class="logo"><img src="/img/vehdoc.png" alt="">VEHDOC</h3>
+                <p>
+                    Our online portal can be accessed by anyone <br> at any time for maximum convenience.</p>
+
+                <div class="footer_image">
+                    <a href="#"><img src="/svg/google-plus-g.svg" alt=""></a>
+                    <a href="#"><img src="/svg/facebook.svg" alt=""></a>
+                    <a href="#"><img src="/svg/linkedin.svg" alt=""></a>
+                    <a href="#"><img src="/svg/twitter.svg" alt=""></a>
+                    <a href="#"><img src="/svg/whatsapp-square.svg" alt=""></a>
+                </div>
+            </div>
+
+            <div class="other_link">
+                <h3>Other Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    
+            </div>
+
+            <div class="Newsletter">
+                <h2>Our Newsletter</h2>
+                <p>Subscribe to our newsletter to get the latest <br> News and offers</p>
+
+                <form action="">
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="submit">
+                </form>
+            </div>
+
+        </footer>
+
+
+    </main>
+
+
+    <div id="id01" class="modal">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close"
+            title="Close Modal">&times;</span>
+    
+        <form class="modal-content" action="/register" method="POST">
+            <div class="container">
+                <h1>Sign Up</h1>
+                <p>Please fill in this form to create an account.</p>
+                <hr>
+                <span style="color: #c40505">{{ msg }}</span>
+                
+                <input type="text" title="" name="name" placeholder="Your Full Name" required>
+                <input type="email" title="Email Address" name="email" placeholder="Email Address" required>
+                <input type="password" title="Password" name="password" placeholder="Password" required>
+                <input type="tel" name="phone" placeholder="Phone Number" title="Phone Number" required>
+
+                <select name="state" id="" title="Select State">
+                    <option hidden disabled selected value> -- Select state -- </option>
+                    <option value="Abia">Abia</option>
+                    <option value="Adamawa">Adamawa</option>
+                    <option value="Akwa Ibom">Akwa Ibom</option>
+                    <option value="Anambra">Anambra</option>
+                    <option value="Bauchi">Bauchi</option>
+                    <option value="Bayelsa">Bayelsa</option>
+                    <option value="Benue">Benue</option>
+                    <option value="Borno">Borno</option>
+                    <option value="Cross River">Cross River</option>
+                    <option value="Delta">Delta</option>
+                    <option value="Ebonyi">Ebonyi</option>
+                    <option value="Edo">Edo</option>
+                    <option value="Ekiti">Ekiti</option>
+                    <option value="Enugu">Enugu</option>
+                    <option value="Gombe">Gombe</option>
+                    <option value="Imo">Imo</option>
+                    <option value="Jigawa">Jigawa</option>
+                    <option value="Kaduna">Kaduna</option>
+                    <option value="Kano">Kano</option>
+                    <option value="Katsina">Katsina</option>
+                    <option value="Kebbi">Kebbi</option>
+                    <option value="Kogi">Kogi</option>
+                    <option value="Kwara">Kwara</option>
+                    <option value="Lagos">Lagos</option>
+                    <option value="Nassarawa">Nassarawa</option>
+                    <option value="Niger">Niger</option>
+                    <option value="Ogun">Ogun</option>
+                    <option value="Ondo">Ondo</option>
+                    <option value="Osun">Osun</option>
+                    <option value="Oyo">Oyo</option>
+                    <option value="Plateau">Plateau</option>
+                    <option value="Rivers">Rivers</option>
+                    <option value="Sokoto">Sokoto</option>
+                    <option value="Taraba">Taraba</option>
+                    <option value="Yobe">Yobe</option>
+                    <option value="Zamfara">Zamfara</option>
+                    <option value="FCT">FCT</option>
+                
+                </select>
+                
+                <h5>Please tell us how you first heard about Vehdoc</h5>
+                <select name="source" id="" title="Information about">
+                    <option hidden disabled selected value> -- Select -- </option>
+                    <option value="googleSearch">Google Search</option>
+                    <option value="googleAds">Google Ads</option>
+                    <option value="fcf">Friends/Colleague/Family</option>
+                    <option value="instagram">Instagram</option>
+                    <option value="twitter">Twitter</option>
+                    <option value="facebook">Facebbok</option>
+                    <option value="whatsapp">Whatsapp</option>
+                    <option value="blogs">Blogs/Forums</option>
+                    <option value="others">Others</option>
+                </select>
+                
+                <div class="checkbox">
+                    <input type="checkbox" title="checkbox" name="checkbox" required>
+                    <p>I agree to the <a href="policy.html">terms</a> of using Vehdoc</p>
+                </div>
+    
+                <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+    
+                <div class="clearfix">
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                        class="cancelbtn">Cancel</button>
+                    <button type="submit" class="signupbtn">Sign Up</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    <div id="id02" class="modal">
+        <span onclick="document.getElementById('id02').style.display='none'" class="close"
+            title="Close Modal">&times;</span>
+        <form class="modal-content" action="/login" method="POST">
+            <div class="container">
+                <h1>Login</h1>
+                <br>
+                <hr>
+                <span style="color: #ad0404">{{ msg }}</span>
+                <input type="text" placeholder="Email" name="email" required>
+                <input type="password" placeholder="Password" name="password" required>
+               
+    
+                 <div class="checkbox">
+                <input type="checkbox" title="checkbox">
+                <p>Stay Logged in</p>
+            </div>
+    
+                <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+    
+                <div class="clearfix">
+                    <button type="button" onclick="document.getElementById('id02').style.display='none'"
+                        class="cancelbtn">Cancel</button>
+                    <button type="submit" class="signupbtn">Sign Up</button>
+                </div>
+            </div>
+        </form>
+    </div>

@@ -1,0 +1,71 @@
+<div class="container2">
+    <!--Navigation-->
+    {{> _navigation}}
+
+    <!--Main-->
+    <div class="main">
+
+        <!--topbar-->
+        {{> _topbar}}
+
+        <div class="formcard">
+            <div class="formcardheader">
+                <h2>Vehicle Profile</h2>
+            </div>
+            <div>{{ msg }}</div>
+
+            <br><br>
+
+            <div>
+                <b>Vehicle category:</b>
+                <span>{{ vehicle.category }}</span>
+            </div>
+            <div>
+                <b>Vehicle brand:</b>
+                <span>{{ vehicle.brand }}</span>
+            </div>
+            <div>
+                <b>Vehicle model:</b>
+                <span>{{ vehicle.model }}</span>
+            </div>
+            <div>
+                <b>Vehicle plate No:</b>
+                <span>{{ vehicle.plateNo }}</span>
+            </div>
+            <div>
+                <b>Vehicle year:</b>
+                <span>{{ vehicle.year }}</span>
+            </div>
+            <div>
+                <b>Vehicle engine No:</b>
+                <span>{{ vehicle.engineNo }}</span>
+            </div>
+            <div>
+                <b>Vehicle chassis No</b>
+                <span>{{ vehicle.chassisNo }}</span>
+            </div>
+            <div>
+                <b>Vehicle color:</b>
+                <span>{{ vehicle.color }}</span>
+            </div>
+            <div>
+                <b>Vehicle location:</b>
+                <span>{{ vehicle.location }}</span>
+            </div>
+            <br><br>
+            <div>
+                <form action="/vehicle/{{vehicle._id}}/edit" method="GET">
+                    <input type="submit" value="Click to Edit Details">
+                </form>
+            </div>
+            <div>
+                <form action="/vehicle/{{vehicle._id}}" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="submit" value="Delete Vehicle Profile">
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</div>

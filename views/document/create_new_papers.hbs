@@ -1,0 +1,86 @@
+<div class="container2">
+    <!--Navigation-->
+    {{> _navigation}}
+
+    <!--Main-->
+    <div class="main">
+
+        <!--topbar-->
+        {{> _topbar}}
+
+    <!--Form-->
+    <div class="formcard">
+        <div class="formcardheader">
+            <h2>New Vehicle Documents</h2>
+        </div>
+    
+        <div class="formcarddetails">
+            <p><strong>REQUIRED</strong> <br>
+                Two phone numbers and a required customs paper or receipt (displaying the VIN or chassis number)
+            </p>
+            
+            <p><strong>TIMELINE</strong> <br>
+                With next day delivery, new registration takes 48 hours (but 96 hours with a tint permit).</p>
+        </div>
+    
+        <form action="/document/vehicle-papers" method="POST" enctype="multipart/form-data">
+            <h3>Select from your registered Vehicle list</h3>
+            <select name="vehicleId" title="Select vehicle" required>
+                <option hidden disabled selected value> -- Select vehicle -- </option>
+                {{#each vehicles}}
+                <option value="{{_id}}">{{brand}} - {{model}} - {{year}}</option>
+                {{/each}}
+            </select>
+            <span>
+                If your vehicle is not registered in the list yet, kindly 
+                <a href="/vehicle" class="link">register now</a>
+            </span>
+            <br><br>
+            <h3>Personal Information & Documents</h3>
+            <span>Full name | Date of birth | Address</span>
+            <input type="text" name="name" placeholder="Full Name" title="Name" value="{{user.name}}" required>
+            <input type="date" name="date" placeholder="Date of birth" required>
+            <input type="text" name="address" placeholder="Contact Address" required>
+    
+    
+            <div class="formcard_upload">
+            <h3>Attach Two Required Documents.</h3>
+            <ul>
+                <li>Two pages of the Original Custom Papers or Original Local Receipt</li>
+                <li>A Valid ID-Card</li>
+            </ul>
+
+            
+            </div>
+            <input type="file" ref="photo" name="photo" id="" title="Upload" required>
+    
+            <h3>Preferences</h3>
+    
+            <input type="doc_name" placeholder="Name to be on Vehicle Documents" required>
+            <input type="number" name="phone1" placeholder="Phone Number to register Vehicle" required>
+            <input type="number" name="phone2" placeholder="Second Phone Number(required)" required>
+    
+            <select name="reg_type" id="" title="Registration Type" required>
+                <option hidden selected disabled>Registration Type</option>
+                <option value="Private Vehicle(With 3rd Party Insurance)">Private Vehicle(With 3rd Party Insurance)</option>
+                <option value="Private Vehicle(No Insurance)">Private Vehicle(No Insurance) </option>
+                <option value="Commercial Vehicle(With 3rd Party Insurance)">Commercial Vehicle(With 3rd Party Insurance)</option>
+                <option value="Commercial Vehicle(No Insurance)">Commercial Vehicle(No Insurance)</option>
+            </select>
+    
+            <select name="plate_type" id="" title="Type of Number Plate" required>
+                <option hidden selected disabled>Type of Number Plate</option>
+                <option value="Any Number">Any Number</option>
+                <option value="Special Number Plate">Special Number Plate(e.g. AAAO1DD) </option>
+                <option value="Personalized/Custom Number">Personalized/Custom Number</option>
+            </select>
+    
+            <input type="text" name="location" title="Delivery Location" placeholder="Delivery Location" required>
+            <input type="submit" value="Start Processing(# 0)" placeholder="" title="Submit Form">
+        </form>
+    
+    </div>
+
+    </div>
+
+</div>
