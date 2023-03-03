@@ -1,3 +1,4 @@
+console.log("this first logged")
 const path = require('path')
 const express = require('express')
 const flash = require('connect-flash')
@@ -12,6 +13,7 @@ const app = express()
 
 
 //=======Config========//
+console.log("this logged")
 
 connectDB()
 
