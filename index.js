@@ -1,4 +1,3 @@
-console.log("this first logged")
 const path = require('path')
 const express = require('express')
 const flash = require('connect-flash')
@@ -13,7 +12,12 @@ const app = express()
 
 
 //=======Config========//
-console.log("this logged")
+if (process.env.NODE_ENV !== 'production') {
+    const dotenv = require('dotenv')
+    const morgan = require('morgan')
+    dotenv.config({ path: './config/config.env' })
+    app.use(morgan('dev'))
+}
 
 connectDB()
 
