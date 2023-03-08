@@ -1,4 +1,4 @@
-document.addEventListener('DOMContnentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     Filepond.registerPlugin(
         FilepondPluginImagePreview,
         FilepondPluginImageResize,
