@@ -1,15 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
-    Filepond.registerPlugin(
-        FilepondPluginImagePreview,
-        FilepondPluginImageResize,
-        FilepondPluginFileEncode
+    FilePond.registerPlugin(
+        FilePondPluginImagePreview,
+        FilePondPluginImageResize,
+        FilePondPluginFileEncode
     )
 
-    Filepond.setOptions({
+    FilePond.setOptions({
         stylePanelAspectRatio: 150 /100,
         imageResizeTargetWidth: 100,
         imageResizeTargetHeight: 150
     })
 
-    Filepond.parse(document.body)
+    FilePond.parse(document.body)
 })
