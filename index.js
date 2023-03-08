@@ -9,7 +9,6 @@ const connectDB = require('./config/connect')
 const methodOverride = require('method-override')
 
 const app = express()
-console.log("Rambo I ran")
 
 
 //=======Config========//
