@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
     )
 
     FilePond.setOptions({
-        stylePanelAspectRatio: 150/100,
-        imageResizeTargetWidth: 100,
-        imageResizeTargetHeight: 150,
+        stylePanelAspectRatio: 300/200,
+        imageResizeTargetWidth: 300,
+        imageResizeTargetHeight: 200,
         imagePreviewHeight: 300
     })
 
