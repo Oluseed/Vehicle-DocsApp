@@ -23,7 +23,7 @@
                 With next day delivery, new registration takes 48 hours (but 96 hours with a tint permit).</p>
         </div>
     
-        <form action="/document/vehicle-papers" method="POST" enctype="multipart/form-data">
+        <form action="/document/vehicle-papers" method="POST">
             <h3>Select from your registered Vehicle list</h3>
             <select name="vehicleId" title="Select vehicle" required>
                 <option hidden disabled selected value> -- Select vehicle -- </option>
@@ -52,7 +52,7 @@
 
             
             </div>
-            <input type="file" ref="photo" name="photo" id="" title="Upload" required>
+            <input type="file" name="photo" class="filepond" title="Upload" required>
     
             <h3>Preferences</h3>
     

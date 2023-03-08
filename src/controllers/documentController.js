@@ -9,6 +9,7 @@ const create_vehicle_papers = async (req, res) => {
     const vehicles = await Vehicle.find({ userId: _id }).lean()
     
     res.status(200).render('document/create_new_papers', {
+        layout: 'uploads_layout',
         msg: req.flash('msg'),
         vehicles: vehicles,
         user: req.user
@@ -16,14 +17,12 @@ const create_vehicle_papers = async (req, res) => {
 }
 
 const store_vehicle_papers = async (req, res) => {
-    const { _id } = req.user
     console.log(req.body)
 
     const document = new Document({
         userId: _id,
         vehicleId: req.body.vehicleId,
         docType: 'Vehicle-Papers',
-        photo: 'img/user.png',
         data: {
             name: req.body.doc_name,
             dob: req.body.dob,
@@ -35,6 +34,8 @@ const store_vehicle_papers = async (req, res) => {
         },
         status: 'processing'
     })
+    savePhoto(document, req.body.photo)
+
     const data = await document.save()
     
     req.flash('msg', 'Document Uploaded sucessfully')
@@ -47,6 +48,17 @@ const show_vehicle_papers = async (req, res) => {
     const document = await Document.findOne({ _id: id }).lean()
     
     res.send(document)
+}
+
+const savePhoto = (document, photoEncoded) => {
+    let imageMimeTypes = ['image/jpeg', 'image/png', 'image/jpg']
+
+    if (photoEncoded === null) return
+    const photo = JSON.parse(photoEncoded)
+    if (imageMimeTypes.includes(cover.type)) {
+        document.photo = new Buffer.from(photo.data, 'base64')
+        book.photoType = photo.type
+    }
 }
 
 module.exports = {
