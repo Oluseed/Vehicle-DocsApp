@@ -1388,6 +1388,7 @@ footer .social_media p {
 }
 
 .pond {
+    margin: auto; 
     width: 200px;
     height: 300px;
 }
