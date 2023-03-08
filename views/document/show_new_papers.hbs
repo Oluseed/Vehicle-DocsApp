@@ -17,12 +17,13 @@
                 </div>
                 <div>
                     <div>Vehicle:</div>
-                    <div>Vehicle Name</div>
+                    <div>{{document.vehicleId.brand}} | {{document.vehicleId.model}}
+                        <a href="/vehicle/{{document.vehicleId._id}}" class="link">View vehicle</a>
+                    </div>
                 </div>
                 <br>
                 <div>
                     <div>Type of document:</div>
-                    {{docType}} {{status}}
                     <div>{{document.docType}}</div>
                 </div>
                 <br>
@@ -53,7 +54,12 @@
                 <br>
                 <div>
                     <div>Type of Plate:</div>
-                    <div>{{document.data.plateType}}</div>
+                    <div>{{document.data.reg_type}}</div>
+                </div>
+                <br>
+                <div>
+                    <div>Type of Plate:</div>
+                    <div>{{document.data.plate_type}}</div>
                 </div>
                 <br>
                 <div>
@@ -63,12 +69,19 @@
                 <br>
                 <div>
                     <div>Status:</div>
-                    <div>{{document.data.status}}</div>
+                    <div>{{document.status}}</div>
                 </div>
                 <br>
                 <div>
                     <div>Date Submitted:</div>
-                    <div>{{document.data.createdAt}}</div>
+                    <div>{{document.updatedAt}}</div>
+                </div>
+                <br>
+                <div>
+                    <div>Vehicle Photo:</div>
+                    <div>
+                        <img src="{{document.photoPath}}" alt="Vehicle picture">
+                    </div>
                 </div>
                 <br>
             </div>

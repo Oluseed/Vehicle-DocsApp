@@ -1,5 +1,6 @@
 const Vehicle = require('../models/Vehicle')
 const Document = require('../models/Document')
+const photoService = require('../services/photoService')
 
 
 
@@ -17,24 +18,23 @@ const create_vehicle_papers = async (req, res) => {
 }
 
 const store_vehicle_papers = async (req, res) => {
-    console.log(req.body)
-
     const document = new Document({
-        userId: _id,
+        userId: req.user._id,
         vehicleId: req.body.vehicleId,
         docType: 'Vehicle-Papers',
         data: {
-            name: req.body.doc_name,
+            doc_name: req.body.doc_name,
             dob: req.body.dob,
             address: req.body.address,
             phone1: req.body.phone1,
             phone2: req.body.phone2,
-            plateType: req.body.plateType,
+            reg_type: req.body.reg_type,
+            plate_type: req.body.plate_type,
             location: req.body.location
         },
         status: 'processing'
     })
-    savePhoto(document, req.body.photo)
+    photoService.savePhoto(document, req.body.photo)
 
     const data = await document.save()
     
@@ -45,21 +45,19 @@ const store_vehicle_papers = async (req, res) => {
 const show_vehicle_papers = async (req, res) => {
     const { id } = req.params
 
-    const document = await Document.findOne({ _id: id }).lean()
+    const document = await Document.findOne({ _id: id })
+                                .populate('vehicleId')
+                                .lean()
+    // console.log(document)
+    document.photoPath = `data:${document.photoType};charset=utf-8;base64,${document.photo.toString('base64')}`
     
-    res.send(document)
+    res.status(200).render('document/show_new_papers', {
+        msg: req.flash('msg'),
+        document: document,
+        user: req.user
+    })
 }
 
-const savePhoto = (document, photoEncoded) => {
-    let imageMimeTypes = ['image/jpeg', 'image/png', 'image/jpg']
-
-    if (photoEncoded === null) return
-    const photo = JSON.parse(photoEncoded)
-    if (imageMimeTypes.includes(cover.type)) {
-        document.photo = new Buffer.from(photo.data, 'base64')
-        book.photoType = photo.type
-    }
-}
 
 module.exports = {
     create_vehicle_papers,
