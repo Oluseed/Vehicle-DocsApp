@@ -45,10 +45,8 @@ const store_vehicle_papers = async (req, res) => {
 const show_vehicle_papers = async (req, res) => {
     const { id } = req.params
 
-    const document = await Document.findOne({ _id: id })
-                                .populate('vehicleId')
-                                .lean()
-    // console.log(document)
+    const document = await Document.findOne({ _id: id }).populate('vehicleId').lean()
+                                
     document.photoPath = `data:${document.photoType};charset=utf-8;base64,${document.photo.toString('base64')}`
     
     res.status(200).render('document/show_new_papers', {
