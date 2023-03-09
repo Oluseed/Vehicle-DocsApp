@@ -1386,3 +1386,9 @@ footer .social_media p {
     text-decoration: underline;
     color: #0a087c;
 }
+
+.pond {
+    margin: auto; 
+    width: 200px;
+    height: 300px;
+}
