@@ -4,6 +4,13 @@
 
     <!--Main-->
     <div class="main">
+        <!--Error Alert-->
+        {{#if msg}}
+        <div class="alert" id="alert">
+            <span class="alert-text">{{msg}}</span>
+            <span class="cancel">x</span>
+        </div>
+        {{/if}}
 
         <!--topbar-->
         {{> _topbar}}

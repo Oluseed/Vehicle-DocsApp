@@ -1,0 +1,68 @@
+<div class="container2">
+    <!--Navigation-->
+    {{> _navigation}}
+
+    <!--Main-->
+    <div class="main">
+        <!--Error Alert-->
+        {{#if msg}}
+        <div class="alert color-success" id="alert">
+            <span class="alert-text">{{msg}}</span>
+            <span class="cancel">x</span>
+        </div>
+        {{/if}}
+
+        <!--topbar-->
+        {{> _topbar}}
+
+        <!--Form-->
+        <div class="formcard">
+            <div class="formcardheader">
+                <h2>Driver License Renewal</h2>
+            </div>
+        
+            <div class="formcarddetails">
+                <p><strong>REQUIRED</strong> <br>
+                    You must provide a clear photo of your current, expired driver's license as well as your passport photo. <br> <br>
+        
+        
+                    <strong>TIMELINE</strong> <br>
+                    The temporary driver's license may be obtained in two days, but the original license requires forty days.
+                </p>
+            </div>
+        
+            <form action="/document/driver-license" method="POST">
+        
+        
+                <input type="text" name="license_no" placeholder="Enter Drivers License Number (L/NO) e.g. FKJ123" required>
+                <input type="text" name="license_name" placeholder="Enter Name on the License" required>
+        
+                <select name="license_type" id="" title="Select cars" required>
+                    <option selected hidden disabled> --Choose Required Option-- </option>
+                    <option value="National License - 3 Years Validity">National License - 3 Years Validity</option>
+                    <option value=National License - 5 Years Validity"">National License - 5 Years Validity</option>
+                    <option value="International Driver's License - 1 Year Validity">International Driver's License - 1 Year Validity</option>
+        
+                </select>
+        
+        
+        
+                <div class="formcard_upload">
+                    <h3>Attach Two Required Documents</h3>
+                    <ul>
+                        <li>Current Driver's License</li>
+                        <li>Your Passport Photograph</li>
+                    </ul>
+                </div>
+        
+                <input type="file" name="photo" class="filepond pond" title="Upload" required>
+        
+                <input type="text" name="location" title="Delivery Location" placeholder="Delivery Location" required>
+                <input type="submit" value="Start Processing(# 0)" placeholder="" title="Submit Form">
+            </form>
+        
+        </div>
+
+    </div>
+
+</div>

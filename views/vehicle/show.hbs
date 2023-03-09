@@ -4,6 +4,13 @@
 
     <!--Main-->
     <div class="main">
+        <!--Error Alert-->
+        {{#if msg}}
+        <div class="alert color-success" id="alert">
+            <span class="alert-text">{{msg}}</span>
+            <span class="cancel">x</span>
+        </div>
+        {{/if}}
 
         <!--topbar-->
         {{> _topbar}}
@@ -12,7 +19,6 @@
             <div class="formcardheader">
                 <h2>Vehicle Profile</h2>
             </div>
-            <div>{{ msg }}</div>
 
             <br><br>
 

@@ -1392,3 +1392,38 @@ footer .social_media p {
     width: 200px;
     height: 300px;
 }
+
+.alert {
+    padding: 10px 15px;
+    margin: 15px;
+    border-radius: 10px 0 0 10px;
+    cursor: pointer;
+    box-shadow: 0 7px 25px #00000054;
+    z-index: 999;
+    justify-content:center;
+    align-items:center;
+    display:flex;
+    position: absolute;
+    top: 60px;
+    right: 0;
+}
+
+.color-error {
+    color: rgba(255, 0, 0, 0.63);
+}
+
+.color-success {
+    color: rgba(0, 128, 0, 0.671);
+}
+
+.alert .cancel {
+    color: rgba(126, 2, 2, 0.63);
+    background-color: rgba(221, 138, 138, 0.822);
+    border-radius: 50%;
+    border: 3px solid rgba(126, 2, 2, 0.63);
+    font-size: 20px;
+    float: right;
+    padding: 4px 10px;
+    margin-left: 10px;
+    font-weight: 900;
+}

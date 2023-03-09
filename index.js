@@ -24,7 +24,11 @@ connectDB()
 
 //=======Middleware======//
 app.use(express.json({ limit: '10mb' }))
-app.use(express.urlencoded({ limit: '10mb', extended: true, parameterLimit: 10000 }))
+app.use(express.urlencoded({ 
+    limit: '10mb', 
+    extended: true, 
+    parameterLimit: 10000 
+}))
 app.use(session({
     secret: process.env.SESS_SECRET,
     resave: false,
@@ -51,7 +55,7 @@ app.use(methodOverride((req, res) => {
 app.engine('.hbs', exphbs.engine({ 
     extname: '.hbs', 
     defaultLayout: 'main',
-    helpers: { inc: (value, option) => parseInt(value)+1 }
+    helpers: { inc: (value) => parseInt(value)+1 }
 }))
 app.set('view engine', '.hbs')
 app.set('views', './views')

@@ -28,7 +28,7 @@ const documentSchema = new Schema({
     status: {
         type: String,
         required: true,
-        enum: ['processing', 'completed']
+        enum: ['submitted', 'processing', 'completed']
     }
 })
 

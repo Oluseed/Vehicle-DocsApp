@@ -30,7 +30,7 @@
         <div class="cardBox">
             <div class="card">
                 <div>
-                    <div class="numbers">5</div>
+                    <div class="numbers">{{count.vehicleCount}}</div>
                     <div class="cardName">Vehicle</div>
                 </div>
                 <div class="iconBx">
@@ -41,7 +41,7 @@
 
             <div class="card">
                 <div>
-                    <div class="numbers">10</div>
+                    <div class="numbers">{{count.documentCount}}</div>
                     <div class="cardName">Orders</div>
                 </div>
                 <div class="iconBx">
@@ -92,7 +92,7 @@
                         {{#each documents}}
                         <a href="/document/vehicle-papers/{{_id}}" class="table-row">
                             <div class="table-cell">{{inc @index "+" 1}}.</div>
-                            <div class="table-cell">brand - model</div>
+                            <div class="table-cell">{{vehicleId.brand}} - {{vehicleId.model}}</div>
                             <div class="table-cell">{{docType}}</div>
                             <div class="table-cell">{{status}}</div>
                         </a>

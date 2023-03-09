@@ -22,12 +22,6 @@
                     <h2>View Records</h2>
                     <a href="../pages/view_records.html" class="btn">View All</a>
                 </div>
-                <div>
-                    <div>Vehicle:</div>
-                    <div>{{document.vehicleId.brand}} | {{document.vehicleId.model}}
-                        <a href="/vehicle/{{document.vehicleId._id}}" class="link">View vehicle</a>
-                    </div>
-                </div>
                 <br>
                 <div>
                     <div>Type of document:</div>
@@ -35,38 +29,18 @@
                 </div>
                 <br>
                 <div>
-                    <div>Name On Paper</div>
-                    <div>{{document.data.doc_name}}</div>
+                    <div>License Number</div>
+                    <div>{{document.data.licence_no}}</div>
                 </div>
                 <br>
                 <div>
-                    <div>Date of Birth:</div>
-                    <div>{{document.data.dob}}</div>
+                    <div>License Name:</div>
+                    <div>{{document.data.licence_name}}</div>
                 </div>
                 <br>
                 <div>
-                    <div>Contact Address:</div>
-                    <div>{{document.data.address}}</div>
-                </div>
-                <br>
-                <div>
-                    <div>Phone No 1:</div>
-                    <div>{{document.data.phone1}}</div>
-                </div>
-                <br>
-                <div>
-                    <div>Phone No 2:</div>
-                    <div>{{document.data.phone2}}</div>
-                </div>
-                <br>
-                <div>
-                    <div>Type of Plate:</div>
-                    <div>{{document.data.reg_type}}</div>
-                </div>
-                <br>
-                <div>
-                    <div>Type of Plate:</div>
-                    <div>{{document.data.plate_type}}</div>
+                    <div>License Type:</div>
+                    <div>{{document.data.licence_type}}</div>
                 </div>
                 <br>
                 <div>
@@ -81,7 +55,7 @@
                 <br>
                 <div>
                     <div>Date Submitted:</div>
-                    <div>{{document.updatedAt}}</div>
+                    <div>{{document.createdAt}}</div>
                 </div>
                 <br>
                 <div>
@@ -93,7 +67,7 @@
                 <br>
                 {{#if deleteCheck}}
                 <div>
-                    <form action="/document/vehicle-papers/{{document._id}}" method="POST">
+                    <form action="/document/driver-license/{{document._id}}" method="POST">
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="submit" value="Delete Form">
                     </form>

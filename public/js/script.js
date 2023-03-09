@@ -18,3 +18,13 @@ function activeLink() {
 list.forEach((item) =>
     item.addEventListener('mouseover', activeLink)
 );
+
+// Alert box toggle
+if (document.getElementById('alert')) {    
+    let cancelbtn = document.querySelector('.cancel')
+    let alert = document.getElementById('alert')
+
+    cancelbtn.onclick = function () {
+        alert.style.display = 'none'
+    }
+}

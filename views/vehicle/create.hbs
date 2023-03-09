@@ -4,6 +4,13 @@
 
     <!--Main-->
     <div class="main">
+        <!--Error Alert-->
+        {{#if msg}}
+        <div class="alert color-success" id="alert">
+            <span class="alert-text">{{msg}}</span>
+            <span class="cancel">x</span>
+        </div>
+        {{/if}}
 
         <!--topbar-->
         {{> _topbar}}
@@ -11,7 +18,6 @@
         <!--data list-->
         <div class="details">
             <div class="recentOrders">
-                {{msg}}
                 <div class="cardHeader">
                     <h2>View Records</h2>
                     <a href="#" class="btn">View All</a>

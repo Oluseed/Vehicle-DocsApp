@@ -4,6 +4,13 @@
 
     <!--Main-->
     <div class="main">
+        <!--Error Alert-->
+        {{#if msg}}
+        <div class="alert color-success" id="alert">
+            <span class="alert-text">{{msg}}</span>
+            <span class="cancel">x</span>
+        </div>
+        {{/if}}
 
         <!--topbar-->
         {{> _topbar}}
@@ -38,7 +45,7 @@
             <br><br>
             <h3>Personal Information & Documents</h3>
             <span>Full name | Date of birth | Address</span>
-            <input type="text" name="name" placeholder="Full Name" title="Name" value="{{user.name}}" required>
+            <input type="text" name="my_name" placeholder="Full Name" title="Your Name" value="{{user.name}}" required>
             <input type="date" name="dob" placeholder="Date of birth" required>
             <input type="text" name="address" placeholder="Contact Address" required>
     
@@ -56,7 +63,7 @@
     
             <h3>Preferences</h3>
     
-            <input type="doc_name" name="doc_name" placeholder="Name to be on Vehicle Documents" required>
+            <input type="text" name="doc_name" placeholder="Name to be on Vehicle Documents" required>
             <input type="number" name="phone1" placeholder="Phone Number to register Vehicle" required>
             <input type="number" name="phone2" placeholder="Second Phone Number(required)" required>
     
