@@ -1,0 +1,111 @@
+<div class="container2">
+    <!--Navigation-->
+    {{> _navigation}}
+
+    <!--Main-->
+    <div class="main">
+        <!--Error Alert-->
+        {{#if msg}}
+        <div class="alert color-success" id="alert">
+            <span class="alert-text">{{msg}}</span>
+            <span class="cancel">x</span>
+        </div>
+        {{/if}}
+
+        <!--topbar-->
+        {{> _topbar}}
+
+        <!--data list-->
+        <div class="details">
+            <div class="recentOrders">
+                <div class="cardHeader">
+                    <h2>View Records</h2>
+                    <a href="../pages/view_records.html" class="btn">View All</a>
+                </div>
+                <div>
+                    <div>Vehicle:</div>
+                    <div>{{document.vehicleId.brand}} | {{document.vehicleId.model}}
+                        <a href="/vehicle/{{document.vehicleId._id}}" class="link">View vehicle</a>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <div>Type of document:</div>
+                    <div>{{document.docType}}</div>
+                </div>
+                <br>
+                <div>
+                    <div>Name On Paper</div>
+                    <div>{{document.data.doc_name}}</div>
+                </div>
+                <br>
+                <div>
+                    <div>Date of Birth:</div>
+                    <div>{{document.data.dob}}</div>
+                </div>
+                <br>
+                <div>
+                    <div>Contact Address:</div>
+                    <div>{{document.data.address}}</div>
+                </div>
+                <br>
+                <div>
+                    <div>Phone No 1:</div>
+                    <div>{{document.data.phone1}}</div>
+                </div>
+                <br>
+                <div>
+                    <div>Phone No 2:</div>
+                    <div>{{document.data.phone2}}</div>
+                </div>
+                <br>
+                <div>
+                    <div>Type of Plate:</div>
+                    <div>{{document.data.reg_type}}</div>
+                </div>
+                <br>
+                <div>
+                    <div>Type of Plate:</div>
+                    <div>{{document.data.plate_type}}</div>
+                </div>
+                <br>
+                <div>
+                    <div>Delivery Location:</div>
+                    <div>{{document.data.location}}</div>
+                </div>
+                <br>
+                <div>
+                    <div>Occupation:</div>
+                    <div>{{document.data.occupation}}</div>
+                </div>
+                <br>
+                <div>
+                    <div>Status:</div>
+                    <div>{{document.status}}</div>
+                </div>
+                <br>
+                <div>
+                    <div>Date Submitted:</div>
+                    <div>{{document.createdAt}}</div>
+                </div>
+                <br>
+                <div>
+                    <div>Vehicle Photo:</div>
+                    <div>
+                        <img src="{{document.photoPath}}" alt="Vehicle picture" height="400" width="400">
+                    </div>
+                </div>
+                <br>
+                {{#if deleteCheck}}
+                <div>
+                    <form action="/document/change-of-ownership/{{document._id}}" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="submit" value="Delete Form">
+                    </form>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+
+    </div>
+</div>

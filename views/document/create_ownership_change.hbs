@@ -1,0 +1,101 @@
+<div class="container2">
+    <!--Navigation-->
+    {{> _navigation}}
+
+    <!--Main-->
+    <div class="main">
+        <!--Error Alert-->
+        {{#if msg}}
+        <div class="alert color-success" id="alert">
+            <span class="alert-text">{{msg}}</span>
+            <span class="cancel">x</span>
+        </div>
+        {{/if}}
+
+        <!--topbar-->
+        {{> _topbar}}
+
+        <!--Form-->
+        <div class="formcard">
+            <div class="formcardheader">
+                <h2>Change of Ownership & Re-registration</h2>
+            </div>
+        
+            <div class="formcarddetails">
+                <p><strong>REQUIRED</strong> <br>
+                Please scroll down to the area below using the Upload button to view them You need six documents to change ownership </p>
+        
+                <p><strong>TIMELINE</strong> <br>
+                    After processing, delivery is made for Change of Ownership & Re-registrations, which takes 2 weeks (with an additional 4
+                    days for tinted permits).
+                </p>
+            </div>
+        
+            <form action="/document/change-of-ownership" method="POST">
+                <h3>Enter Vehicle Details</h3>
+                <select name="vehicleId" title="Select vehicle" required>
+                    <option hidden disabled selected value> -- Select vehicle -- </option>
+                    {{#each vehicles}}
+                    <option value="{{_id}}">{{brand}} - {{model}} - {{year}}</option>
+                    {{/each}}
+                </select>
+                <span>
+                    If your vehicle is not registered in the list yet, kindly 
+                    <a href="/vehicle" class="link">register now</a>
+                </span>
+        
+                <h3>New Personal Information</h3>
+                <input type="text" name="doc_name" placeholder="Name to be on Vehicle Documents" required>
+                <input type="text" name="phone1" placeholder="Phone number to register Vehicle" required>
+                <input type="text" name="phone2" placeholder="Second Phone Number(required)" required>
+                <input type="text" name="occupation" placeholder="Occupation" value="" title="Occupation" required>
+        
+        
+                <h5>Date of Birth</h5>
+        
+                <input type="date" name="dob" id="" placeholder="Date of birth" required>
+                <input type="text" name="address" placeholder="Contact Address" required>
+        
+        
+                <div class="formcard_upload">
+                    <h3>Attach Six Required Documents</h3>
+                    <ul>
+                        <li>Valid Evidence of Ownership</li>
+                        <li>Driver's License</li>
+                        <li>Purchase Receipt</li>
+                        <li>Document of Transfer of Ownership</li>
+                        <li>Valid ID card with your passport photograph</li>
+
+                       
+                    </ul>
+        
+                </div>
+                <input type="file" name="photo" class="filepond pond" title="Upload" required>
+        
+                <h3>Others</h3>
+        
+                <select name="reg_type" id="" title="Registration Type">
+                    <option selected hidden disabled>Registration Type</option>
+                    <option value="Private Vehicle">Private Vehicle</option>
+                    <option value="Commercial Vehicle">Commercial Vehicle </option>
+        
+                </select>
+        
+                <select name="plate_type" id="" title="Type of Number Plate" required>
+                    <option selected hidden disabled>Type of Number Plate</option>
+                    <option value="New Number"> New Number</option>
+                    <option value="Special Number Plate">Special Number Plate(e.g. AAAO1DD) </option>
+                    <option value="New Personalized/Custom Number"> New Personalized/Custom Number</option>
+                    <option value="I have Existing Number Plate">I have Existing Number Plate</option>
+                </select>
+        
+                <input type="text" name="location" title="Delivery Location" placeholder="Delivery Location" required>
+        
+                <input type="submit" value="Start Processing(# 0)" placeholder="" title="Submit Form">
+            </form>
+        
+        </div>
+
+    </div>
+
+</div>

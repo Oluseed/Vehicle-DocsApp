@@ -39,7 +39,6 @@ router.delete(
 )
 
 
-
 // Driver Licence
 router.get(
     '/driver-license', 
@@ -63,6 +62,32 @@ router.delete(
     '/driver-license/:id', 
     ensureAuth,
     DocumentController.destroy_driver_license,
+)
+
+
+// change-of-ownership
+router.get(
+    '/change-of-ownership', 
+    ensureAuth,
+    DocumentController.create_ownership_change,
+)
+
+router.post(
+    '/change-of-ownership', 
+    ensureAuth,
+    DocumentController.store_ownership_change,
+)
+
+router.get(
+    '/change-of-ownership/:id', 
+    ensureAuth,
+    DocumentController.show_ownership_change,
+)
+
+router.delete(
+    '/change-of-ownership/:id', 
+    ensureAuth,
+    DocumentController.destroy_ownership_change,
 )
 
 
