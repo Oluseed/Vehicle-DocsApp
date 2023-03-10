@@ -63,8 +63,6 @@ app.use(express.static(path.join(__dirname, './public')))
 
 
 //=======Routes========//
-app.use('/', require('./src/routes/index'))
-
 app.use('/', require('./src/routes/auth'))
 
 app.use('/', require('./src/routes/user'))
@@ -72,6 +70,8 @@ app.use('/', require('./src/routes/user'))
 app.use('/vehicle', require('./src/routes/vehicle'))
 
 app.use('/document', require('./src/routes/document'))
+
+app.use('/', require('./src/routes/index'))
 
 
 //=======........========//
