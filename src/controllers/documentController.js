@@ -128,6 +128,7 @@ const destroy_driver_license = async (req, res) => {
     }
 }
 
+
 // Change Of Ownership
 const create_ownership_change = async (req, res) => {
     const { _id } = req.user
@@ -196,6 +197,119 @@ const destroy_ownership_change = async (req, res) => {
 }
 
 
+// Comprehensive Insurance
+const create_comprehensive_insurance = async (req, res) => {
+    
+    res.status(200).render('document/create_comprehensive_insurance', {
+        layout: 'uploads_layout',
+        msg: req.flash('msg'),
+        user: req.user
+    })
+}
+
+const store_comprehensive_insurance = async (req, res) => {
+    const document = new Document({
+        userId: req.user._id,
+        docType: 'Comprehensive-Insurance',
+        data: {
+            vehicle_category: req.body.vehicle_category,
+            vehicle_use: req.body.vehicle_use,
+            vehicle_price: req.body.vehicle_price,
+            insurance_company: req.body.insurance_company,
+            location: req.body.location
+        },
+        status: 'submitted'
+    })
+    photoService.savePhoto(document, req.body.photo)
+
+    const data = await document.save()
+    
+    req.flash('msg', 'Document Uploaded successfully')
+    res.status(200).redirect(`/document/comprehensive-insurance/${data._id}`)
+}
+
+const show_comprehensive_insurance = async (req, res) => {
+    const { id } = req.params
+
+    const document = await Document.findOne({ _id: id }).lean()
+                                
+    document.photoPath = `data:${document.photoType};charset=utf-8;base64,${document.photo.toString('base64')}`
+    
+    res.status(200).render('document/show_comprehensive_insurance', {
+        msg: req.flash('msg'),
+        document: document,
+        user: req.user,
+        deleteCheck: document.status === 'submitted'
+    })
+}
+
+const destroy_comprehensive_insurance = async (req, res) => {
+    try {
+        const { id } = req.params
+        await Document.findByIdAndDelete(id)
+        
+        req.flash('msg', 'Form Deleted Successfully!')
+        res.redirect('/document/comprehensive-insurance')
+    } catch (err) {
+        res.status(404).json({ err })
+    }
+}
+
+
+// Other Permits
+const create_other_permits = async (req, res) => {
+    
+    res.status(200).render('document/create_other_permits', {
+        layout: 'uploads_layout',
+        msg: req.flash('msg'),
+        user: req.user
+    })
+}
+
+const store_other_permits = async (req, res) => {
+    const document = new Document({
+        userId: req.user._id,
+        docType: 'Other-Permits',
+        data: {
+            vehicle_category: req.body.vehicle_category,
+            permit_category: req.body.permit_category,
+            location: req.body.location
+        },
+        status: 'submitted'
+    })
+
+    const data = await document.save()
+    
+    req.flash('msg', 'Document Uploaded successfully')
+    res.status(200).redirect(`/document/other-permits/${data._id}`)
+}
+
+const show_other_permits = async (req, res) => {
+    const { id } = req.params
+
+    const document = await Document.findOne({ _id: id }).lean()
+    
+    res.status(200).render('document/show_other_permits', {
+        msg: req.flash('msg'),
+        document: document,
+        user: req.user,
+        deleteCheck: document.status === 'submitted'
+    })
+}
+
+const destroy_other_permits = async (req, res) => {
+    try {
+        const { id } = req.params
+        await Document.findByIdAndDelete(id)
+        
+        req.flash('msg', 'Form Deleted Successfully!')
+        res.redirect('/document/other-permits')
+    } catch (err) {
+        res.status(404).json({ err })
+    }
+}
+
+
 
 module.exports = {
     create_vehicle_papers,
@@ -209,5 +323,13 @@ module.exports = {
     create_ownership_change,
     store_ownership_change,
     show_ownership_change,
-    destroy_ownership_change
+    destroy_ownership_change,
+    create_comprehensive_insurance,
+    store_comprehensive_insurance,
+    show_comprehensive_insurance,
+    destroy_comprehensive_insurance,
+    create_other_permits,
+    store_other_permits,
+    show_other_permits,
+    destroy_other_permits
 }

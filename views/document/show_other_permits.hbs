@@ -31,34 +31,30 @@
                             <td>{{document.docType}}</td>
                         </tr>
                         <tr>
-                            <td>License Number</td>
-                            <td>{{document.data.licence_no}}</td>
+                            <td>Vehicle Category</td>
+                            <td>{{document.data.vehicle_category}}</td>
                         </tr>
                         <tr>
-                            <td>License Name</td>
-                            <td>{{document.data.licence_name}}</td>
-                        </tr>
-                        <tr>
-                            <td>License Type</td>
-                            <td>{{document.data.licence_type}}</td>
-                        </tr>
-                        <tr>
-                            <td>Status</td>
-                            <td>{{document.status}}</td>
+                            <td>Permit Category</td>
+                            <td>{{document.data.permit_category}}</td>
                         </tr>
                         <tr>
                             <td>Delivery Location</td>
                             <td>{{document.data.location}}</td>
                         </tr>
                         <tr>
+                            <td>Status</td>
+                            <td>{{document.status}}</td>
+                        </tr>
+                        <tr>
                             <td>Date Submitted</td>
-                            <td>{{document.createdAt}}</td>
+                            <td>{{document.updatedAt}}</td>
                         </tr>
                     </tbody>
                 </table>
                 
                 <div>
-                    <div>Uploads:</div>
+                    <div>Vehicle Photo:</div>
                     <div>
                         <img src="{{document.photoPath}}" alt="Vehicle picture" height="400" width="400">
                     </div>
@@ -66,7 +62,7 @@
                 <br>
                 {{#if deleteCheck}}
                 <div>
-                    <form action="/document/driver-license/{{document._id}}" method="POST">
+                    <form action="/document/other-permits/{{document._id}}" method="POST">
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="submit" value="Delete Form">
                     </form>
@@ -74,5 +70,6 @@
                 {{/if}}
             </div>
         </div>
+
     </div>
 </div>

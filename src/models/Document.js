@@ -30,6 +30,8 @@ const documentSchema = new Schema({
         required: true,
         enum: ['submitted', 'rejected', 'processing', 'completed']
     }
+}, {
+    timestamps: true
 })
 
 

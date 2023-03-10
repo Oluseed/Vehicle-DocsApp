@@ -16,76 +16,69 @@
         {{> _topbar}}
 
         <!--data list-->
-        <div class="details">
+        <div class="details content_box">
             <div class="recentOrders">
-                <div class="cardHeader">
-                    <h2>View Records</h2>
-                    <a href="../pages/view_records.html" class="btn">View All</a>
-                </div>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <td>NAME</td>
+                            <td>DETAILS</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Vehicle</td>
+                            <td>{{document.vehicleId.brand}} | {{document.vehicleId.model}} <a href="/vehicle/{{document.vehicleId._id}}" class="link">View vehicle</a></td>
+                        </tr>
+                        <tr>
+                            <td>Type Of Document</td>
+                            <td>{{document.docType}}</td>
+                        </tr>
+                        <tr>
+                            <td>Name On Paper</td>
+                            <td>{{document.data.doc_name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Date of Birth</td>
+                            <td>{{document.data.dob}}</td>
+                        </tr>
+                        <tr>
+                            <td>Contact Address</td>
+                            <td>{{document.data.address}}</td>
+                        </tr>
+                        <tr>
+                            <td>Phone No 1</td>
+                            <td>{{document.data.phone1}}</td>
+                        </tr>
+                        <tr>
+                            <td>Phone No 2</td>
+                            <td>{{document.data.phone2}}</td>
+                        </tr>
+                        <tr>
+                            <td>Type of Registration</td>
+                            <td>{{document.data.reg_type}}</td>
+                        </tr>
+                        <tr>
+                            <td>Type of Plate</td>
+                            <td>{{document.data.plate_type}}</td>
+                        </tr>
+                        <tr>
+                            <td>Delivery Location</td>
+                            <td>{{document.data.location}}</td>
+                        </tr>
+                        <tr>
+                            <td>Status</td>
+                            <td>{{document.status}}</td>
+                        </tr>
+                        <tr>
+                            <td>Date Submitted</td>
+                            <td>{{document.createdAt}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
                 <div>
-                    <div>Vehicle:</div>
-                    <div>{{document.vehicleId.brand}} | {{document.vehicleId.model}}
-                        <a href="/vehicle/{{document.vehicleId._id}}" class="link">View vehicle</a>
-                    </div>
-                </div>
-                <br>
-                <div>
-                    <div>Type of document:</div>
-                    <div>{{document.docType}}</div>
-                </div>
-                <br>
-                <div>
-                    <div>Name On Paper</div>
-                    <div>{{document.data.doc_name}}</div>
-                </div>
-                <br>
-                <div>
-                    <div>Date of Birth:</div>
-                    <div>{{document.data.dob}}</div>
-                </div>
-                <br>
-                <div>
-                    <div>Contact Address:</div>
-                    <div>{{document.data.address}}</div>
-                </div>
-                <br>
-                <div>
-                    <div>Phone No 1:</div>
-                    <div>{{document.data.phone1}}</div>
-                </div>
-                <br>
-                <div>
-                    <div>Phone No 2:</div>
-                    <div>{{document.data.phone2}}</div>
-                </div>
-                <br>
-                <div>
-                    <div>Type of Plate:</div>
-                    <div>{{document.data.reg_type}}</div>
-                </div>
-                <br>
-                <div>
-                    <div>Type of Plate:</div>
-                    <div>{{document.data.plate_type}}</div>
-                </div>
-                <br>
-                <div>
-                    <div>Delivery Location:</div>
-                    <div>{{document.data.location}}</div>
-                </div>
-                <br>
-                <div>
-                    <div>Status:</div>
-                    <div>{{document.status}}</div>
-                </div>
-                <br>
-                <div>
-                    <div>Date Submitted:</div>
-                    <div>{{document.updatedAt}}</div>
-                </div>
-                <br>
-                <div>
-                    <div>Vehicle Photo:</div>
+                    <div>Uploads:</div>
                     <div>
                         <img src="{{document.photoPath}}" alt="Vehicle picture" height="400" width="400">
                     </div>
@@ -101,6 +94,5 @@
                 {{/if}}
             </div>
         </div>
-
     </div>
 </div>

@@ -1,0 +1,66 @@
+<div class="container2">
+    <!--Navigation-->
+    {{> _navigation}}
+
+    <!--Main-->
+    <div class="main">
+        <!--Error Alert-->
+        {{#if msg}}
+        <div class="alert color-success" id="alert">
+            <span class="alert-text">{{msg}}</span>
+            <span class="cancel">x</span>
+        </div>
+        {{/if}}
+
+        <!--topbar-->
+        {{> _topbar}}
+
+        <!--Form-->
+        <div class="formcard">
+            <div class="formcardheader">
+                <h2>Other Vehicle Papers</h2>
+            </div>
+        
+            <div class="formcarddetails">
+                <p><strong>REQUIRED</strong> <br>
+                Select the vehicle and the kind of documents or permits you wish to process. </p>
+        
+            </div>
+        
+            <form action="/document/other-permits" method="POST">
+                <h3>Select Vehicle</h3>
+                <select name="vehicle_category" id="" title="Select cars" required>
+                    <option selected hidden disabled>Select cars</option>
+                    <option value="Motorcycle">Motorcycle</option>
+                    <option value="Saloon Car-Mini(1.4-1.9L)">Saloon Car-Mini(1.4-1.9L) e.g. Picanto, Corolla, Almera, Civic</option>
+                    <option value="Saloon Car-Maxi(2.0-2.6L)">Saloon Car-Maxi(2.0-2.6L) e.g. Camry, Benz, Accord, Lexus & Others</option>
+                    <option value="SUV | Jeep | Bus | Pick-Up | Crossover">SUV | Jeep | Bus | Pick-Up | Crossover</option>
+                    <option value="Coaster Bus">Coaster Bus</option>
+                    <option value="Mini Trucks | Trucks 15 Tons (Tippers)">Mini Trucks | Trucks 15 Tons (Tippers)</option>
+                    <option value="Trucks 20 Tons (6-10 Tyres)">Trucks 20 Tons (6-10 Tyres)</option>
+                    <option value="Trucks 30 Tons(Trailers 10+ Tyres)">Trucks 30 Tons(Trailers 10+ Tyres)</option>
+                </select>
+        
+                <select name="permit_category" id="" title="Other Vehicle Permit" required>
+                    <option selected hidden disabled>Other Vehicle Permit</option>
+                    <option value="Rider's Card (Motorcycle)">Rider's Card (Motorcycle)</option>
+                    <option value="Federal MidYear Truck Permit">Federal MidYear Truck Permit</option>
+                    <option value="Reprint Police CMR">Reprint Police CMR</option>
+                    <option value="Light Duty Permit for Trucks(lfo)">Light Duty Permit for Trucks(lfo)</option>
+                    <option value="Change of Vehicle Engine">Change of Vehicle Engine</option>
+                    <option value="Heavy and Light Duty Permit">Heavy and Light Duty Permit</option>
+                    <option value="Addition/Adjustment on Autoreg database">Addition/Adjustment on Autoreg database</option>
+                    <option value="Reprint Regular Number Plates">Reprint Regular Number Plates</option>
+                    <option value="Reprint Customized Number Plates">Reprint Customized Number Plates</option>
+                </select>
+        
+                <input type="text" name="location" title="Delivery Location" placeholder="Delivery Location" required>
+        
+                <input type="submit" value="Start Processing(# 0)" placeholder="" title="Submit Form">
+            </form>
+        
+        </div>
+
+    </div>
+
+</div>

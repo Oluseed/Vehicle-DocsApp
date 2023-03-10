@@ -91,4 +91,56 @@ router.delete(
 )
 
 
+// comprehensive-insurance
+router.get(
+    '/comprehensive-insurance', 
+    ensureAuth,
+    DocumentController.create_comprehensive_insurance,
+)
+
+router.post(
+    '/comprehensive-insurance', 
+    ensureAuth,
+    DocumentController.store_comprehensive_insurance,
+)
+
+router.get(
+    '/comprehensive-insurance/:id', 
+    ensureAuth,
+    DocumentController.show_comprehensive_insurance,
+)
+
+router.delete(
+    '/comprehensive-insurance/:id', 
+    ensureAuth,
+    DocumentController.destroy_comprehensive_insurance,
+)
+
+
+// other-permits
+router.get(
+    '/other-permits', 
+    ensureAuth,
+    DocumentController.create_other_permits,
+)
+
+router.post(
+    '/other-permits', 
+    ensureAuth,
+    DocumentController.store_other_permits,
+)
+
+router.get(
+    '/other-permits/:id', 
+    ensureAuth,
+    DocumentController.show_other_permits,
+)
+
+router.delete(
+    '/other-permits/:id', 
+    ensureAuth,
+    DocumentController.destroy_other_permits,
+)
+
+
 module.exports = router

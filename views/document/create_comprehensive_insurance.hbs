@@ -1,0 +1,88 @@
+<div class="container2">
+    <!--Navigation-->
+    {{> _navigation}}
+
+    <!--Main-->
+    <div class="main">
+        <!--Error Alert-->
+        {{#if msg}}
+        <div class="alert color-success" id="alert">
+            <span class="alert-text">{{msg}}</span>
+            <span class="cancel">x</span>
+        </div>
+        {{/if}}
+
+        <!--topbar-->
+        {{> _topbar}}
+
+        <!--Form-->
+        <div class="formcard">
+            <div class="formcardheader">
+                <h2>Comprehensive Insurance</h2>
+            </div>
+        
+            <div class="formcarddetails">
+                <p><strong>REQUIRED</strong> <br>
+                    A picture of your car with the number plate attached must be uploaded. If we are registering a new car for you, we will
+                    make the request later. </p>
+        
+            </div>
+        
+            <form action="/document/comprehensive-insurance" method="POST">
+                <h3>Select Vehicle</h3>
+                <select name="vehicle_category" id="" title="Select cars" required>
+                    <option disabled hidden selected>Select cars</option>
+                    <option value="Motorcycle">Motorcycle</option>
+                    <option value="Saloon Car-Mini(1.4-1.9L)">Saloon Car-Mini(1.4-1.9L) e.g. Picanto, Corolla, Almera, Civic</option>
+                    <option value="Saloon Car-Maxi(2.0-2.6L)">Saloon Car-Maxi(2.0-2.6L) e.g. Camry, Benz, Accord, Lexus & Others</option>
+                    <option value="UV | Jeep | Bus | Pick-Up | Crossover">SUV | Jeep | Bus | Pick-Up | Crossover</option>
+                    <option value="Coaster Bus">Coaster Bus</option>
+                    <option value="Mini Trucks | Trucks 15 Tons (Tippers)">Mini Trucks | Trucks 15 Tons (Tippers)</option>
+                    <option value="Trucks 20 Tons (6-10 Tyres)">Trucks 20 Tons (6-10 Tyres)</option>
+                    <option value="Trucks 30 Tons(Trailers 10+ Tyres)">Trucks 30 Tons(Trailers 10+ Tyres)</option>
+                </select>
+        
+                <select name="vehicle_use" id="" title="Use of Vehicle" required>
+                    <option selected hidden disabled>What is the Vehicle Used For</option>
+                    <option value="Uber/Taxify/Ride-Hailing">Uber/Taxify/Ride-Hailing</option>
+                    <option value="Private Vehicle">Private Vehicle</option>
+                    <option value="Commercial / Haulage">Commercial / Haulage</option>
+                </select>
+        
+                <select name="insurance_company" id="" title="Select Insurance Company">
+                    <option selected hidden disabled>Select Insurance Company</option>
+        
+                </select>
+        
+        
+        
+        
+        
+                <h5>How much is the value of the vehicle?</h5>
+                <input type="text" name="vehicle_price" placeholder="Price of Vehicle" value="" title="Vehicle Price" required>
+        
+        
+                <div class="formcard_upload">
+                    <h3>Attach Three Required Documents</h2>
+                    <ul>
+                        <li>Pictures of your car's front and rear with the number plate attached</li>
+                        <li>Your Driver's License</li>
+                        <li>Your Passport Photograph</li>
+                    </ul>
+
+                </div>
+        
+                <input type="file" name="photo" class="filepond pond" title="Upload" required>
+        
+        
+        
+                <input type="text" name="location" title="Delivery Location" placeholder="Delivery Location" required>
+        
+                <input type="submit" value="Start Processing(# 0)" placeholder="" title="Submit Form">
+            </form>
+        
+        </div>
+
+    </div>
+
+</div>

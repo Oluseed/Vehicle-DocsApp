@@ -685,7 +685,7 @@ cardBox .welcomecard .numbers {
     }
 
     .toogle {
-        z-index: 10001;
+        z-index: 1001;
     }
 
     .main.active.toogle {
@@ -1399,7 +1399,7 @@ footer .social_media p {
     border-radius: 10px 0 0 10px;
     cursor: pointer;
     box-shadow: 0 7px 25px #00000054;
-    z-index: 999;
+    z-index: 1002;
     justify-content:center;
     align-items:center;
     display:flex;
@@ -1426,4 +1426,32 @@ footer .social_media p {
     padding: 4px 10px;
     margin-left: 10px;
     font-weight: 900;
+}
+
+.content_box table{
+    border: 5px solid #fff;
+    border-radius: 10px;
+    border-collapse: collapse;
+    width: 100%;
+    overflow: auto;
+    font-family: Monospace;
+    background: #bdbdbd;
+    font-size: 14px;
+}
+
+.content_box table thead tr td{
+    padding: 20px 0;
+    font-weight: bold;
+    text-align: center;
+    background: #3b3b3b;
+    color: #fff;
+}
+
+.content_box table tbody tr:nth-child(even){
+    background: #3b3b3b;
+    color: #fff;
+}
+
+.content_box table tr td{
+    padding: 10px 20px;
 }

@@ -31,16 +31,20 @@
                             <td>{{document.docType}}</td>
                         </tr>
                         <tr>
-                            <td>License Number</td>
-                            <td>{{document.data.licence_no}}</td>
+                            <td>Vehicle Category</td>
+                            <td>{{document.data.vehicle_category}}</td>
                         </tr>
                         <tr>
-                            <td>License Name</td>
-                            <td>{{document.data.licence_name}}</td>
+                            <td>Use Of Vehicle</td>
+                            <td>{{document.data.vehicle_use}}</td>
                         </tr>
                         <tr>
-                            <td>License Type</td>
-                            <td>{{document.data.licence_type}}</td>
+                            <td>Price Of Vehicle</td>
+                            <td>{{document.data.vehicle_price}}</td>
+                        </tr>
+                        <tr>
+                            <td>Insurance Company</td>
+                            <td>{{document.data.insurance_company}}</td>
                         </tr>
                         <tr>
                             <td>Status</td>
@@ -52,7 +56,7 @@
                         </tr>
                         <tr>
                             <td>Date Submitted</td>
-                            <td>{{document.createdAt}}</td>
+                            <td>{{document.updatedAt}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -66,7 +70,7 @@
                 <br>
                 {{#if deleteCheck}}
                 <div>
-                    <form action="/document/driver-license/{{document._id}}" method="POST">
+                    <form action="/document/comprehensive-insurance/{{document._id}}" method="POST">
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="submit" value="Delete Form">
                     </form>
