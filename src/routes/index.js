@@ -14,7 +14,7 @@ const { ensureAuth, ensureGuest } = require('../middlewares/auth')
 
 router.get('/', ensureGuest, IndexController.index)
 
-router.get('/:pathMatch(.*)*', ensureGuest, IndexController.error)
+router.get('/:pathMatch(.*)*', IndexController.error)
 
 
 module.exports = router
