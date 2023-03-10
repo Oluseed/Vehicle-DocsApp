@@ -7,7 +7,15 @@ const index = async (req, res) => {
     })
 }
 
+const error = async (req, res) => {
+    res.status(200).render('error', {
+        msg: 'Error on request',
+        user: req.user
+    })
+}
+
 
 module.exports = {
-    index
+    index,
+    error
 }
