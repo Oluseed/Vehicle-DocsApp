@@ -1435,7 +1435,7 @@ footer .social_media p {
     width: 100%;
     overflow: auto;
     font-family: Monospace;
-    background: #bdbdbd;
+    background: #d6ffd4;
     font-size: 14px;
 }
 
@@ -1443,12 +1443,12 @@ footer .social_media p {
     padding: 20px 0;
     font-weight: bold;
     text-align: center;
-    background: #3b3b3b;
+    background: #124b11;
     color: #fff;
 }
 
 .content_box table tbody tr:nth-child(even){
-    background: #3b3b3b;
+    background: #124b11;
     color: #fff;
 }
 

@@ -90,7 +90,7 @@
                     </div>
                     <div class="tbody">
                         {{#each documents}}
-                        <a href="/document/vehicle-papers/{{_id}}" class="table-row">
+                        <a href="/check/{{docType}}/{{_id}}" class="table-row">
                             <div class="table-cell">{{inc @index "+" 1}}.</div>
                             <div class="table-cell">{{vehicleId.brand}} - {{vehicleId.model}}</div>
                             <div class="table-cell">{{docType}}</div>

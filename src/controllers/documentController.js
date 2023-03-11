@@ -84,7 +84,7 @@ const create_driver_license = async (req, res) => {
 const store_driver_license = async (req, res) => {
     const document = new Document({
         userId: req.user._id,
-        docType: 'Driver-Licence',
+        docType: 'Driver-License',
         data: {
             licence_no: req.body.license_no,
             licence_name: req.body.license_name,
