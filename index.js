@@ -7,6 +7,7 @@ const exphbs = require('express-handlebars')
 const MongoStore = require('connect-mongo')
 const connectDB = require('./config/connect')
 const methodOverride = require('method-override')
+const hbsHelpers = require('./config/hbs')
 
 const app = express()
 
@@ -55,7 +56,7 @@ app.use(methodOverride((req, res) => {
 app.engine('.hbs', exphbs.engine({ 
     extname: '.hbs', 
     defaultLayout: 'main',
-    helpers: { inc: (value) => parseInt(value)+1 }
+    helpers: hbsHelpers
 }))
 app.set('view engine', '.hbs')
 app.set('views', './views')

@@ -82,9 +82,9 @@
                     <div class="thead">
                         <div class="table-row">
                             <div class="table-cell">S/N</div>
-                            <div class="table-cell">Name</div>
                             <div class="table-cell">Document Type</div>
                             <div class="table-cell">Status</div>
+                            <div class="table-cell">Last Updated</div>
 
                         </div>
                     </div>
@@ -92,9 +92,9 @@
                         {{#each documents}}
                         <a href="/check/{{docType}}/{{_id}}" class="table-row">
                             <div class="table-cell">{{inc @index "+" 1}}.</div>
-                            <div class="table-cell">{{vehicleId.brand}} - {{vehicleId.model}}</div>
                             <div class="table-cell">{{docType}}</div>
                             <div class="table-cell">{{status}}</div>
+                            <div class="table-cell">{{formatDate updatedAt 'MMMM Do YYYY, h:mm:ss a'}}</div>
                         </a>
                         {{/each}}
                     </div>

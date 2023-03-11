@@ -1,32 +1,58 @@
 <main>
+
+       
         <!--Navbar-->
         <div class="header">
+           <div class="lnav">
             <img src="/img/vehdoc.png" alt="">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="">About Us</a></li>
-                <li><a href="">Contact Us</a></li>
-
-            </ul>
-
+            <img src="/svg/bars.svg" alt="" class="menu">
+            
+            <div class="lmenu">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">Contact Us</a></li>
+                   
+                    <li><button onclick="document.getElementById('id02').style.display='block'" style="width:150px;">Login</button></li>
+                </ul>
+            </div>
+           </div>
         </div>
 
+        <div class="menubtn">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About Us</a></li>
+                <li><a href="">Contact Us</a></li>
+                <li><button onclick="document.getElementById('id02').style.display='block'" style="width:150px;">Login</button></li>
+        
+            </ul>
+        </div>
+       
+        
+        <div class="light">
+            <img src="/svg/whatsapp.svg" alt="" width="40px">
+        </div>
         <!--Welcome Page-->
         <div class="welcome">
-            <div class="welcome-image">
-                <img src="/img/pexels-dan-cristian-pădureț-1476321.jpg" alt="Welcome Image">
-            </div>
+            
 
             <div class="welcome-intro">
                 <h2>Vehicle papers, made easy.</h2>
                 <p>Vehdoc handles online vehicle registration and automobile papers renewal that is less expensive, automated, and includes
-                home/office delivery.</p>
+                home/office delivery. This is one of the best leading platforms
+            that handles vehicle registration and automobile paper. We give you affordable prices. 
+        We are reliable and we hope to give you the best</p>
                 </p>
             
                <div class="flex">
-                <button onclick="document.getElementById('id01').style.display='block'" style="width:150px;">Sign Up</button>
-                <button onclick="document.getElementById('id02').style.display='block'" style="width:150px;">Login</button>
+                
+                <button onclick="document.getElementById('id01').style.display='block'" style="width:150px;">Signup</button>
                </div>
+            </div>
+
+            <div class="welcome-image">
+                <img src="/img/pexels-dan-cristian-pădureț-1476321.jpg" alt="Welcome Image">
             </div>
 
         </div>
@@ -58,12 +84,12 @@
 
         </div>
 
-        <!--Testimonial-->
+        <!--Testimonial>
         <div class="maintestcard">
             <div class="testcard">
                 <div class="gridcard">
                     <div class="gridcard-details">
-                        <img src="/img/IMG-20221215-WA0029 (2).jpg" alt="Client-image">
+                        <img src="../assets/img/IMG-20221215-WA0029 (2).jpg" alt="Client-image">
                         <p class="sm">Akinjide Ayomide</p>
                     </div>
                     <p>I cannot believe it. I can be sure that you guys will renew all of my other autos and buddies. I'm very grateful.
@@ -72,7 +98,7 @@
 
                 <div class="gridcard">
                     <div class="gridcard-details">
-                        <img src="/img/IMG-20221215-WA0029 (2).jpg" alt="Client-image">
+                        <img src="../assets/img/IMG-20221215-WA0029 (2).jpg" alt="Client-image">
                         <p class="sm">Oluseed Ltd</p>
                     </div>
                     <p>I am satisfied with your service, and I can guarantee that your business will handle all of our paperwork for auto
@@ -81,14 +107,56 @@
 
                 <div class="gridcard">
                     <div class="gridcard-details">
-                        <img src="/img/IMG-20221215-WA0029 (2).jpg" alt="Client-image">
+                        <img src="../assets/img/IMG-20221215-WA0029 (2).jpg" alt="Client-image">
                         <p class="sm">Akinjide Ayomide</p>
                     </div>
                     <p>Excellent! I'm giving out my referral code to everyone I know. This is a vital service! You guys are fantastic.
                     </p>
                 </div>
             </div>
-        </div>
+        </div-->
+
+        <section class="services">
+            <h2>Testimonial</h2>
+            <div class="cards">
+        
+                <div class="card">
+                    <div class="testimonial-img">
+                    </div>
+                    <h3>Akinjide Ayomide</h3>
+                    <p>
+                    I cannot believe it. I can be sure that you guys will renew all of my other autos and buddies. I'm very grateful
+                    </p>
+                </div>
+        
+                <div class="card">
+                    <div class="testimonial-img"></div>
+        
+                    <h3>Akinjide Ayomide</h3>
+                    <p>
+                        I cannot believe it. I can be sure that you guys will renew all of my other autos and buddies. I'm very grateful
+                    </p>
+                </div>
+        
+                <div class="card">
+                    <div class="testimonial-img"></div>
+        
+                <h3>Akinjide Ayomide</h3>
+                <p>
+                    I cannot believe it. I can be sure that you guys will renew all of my other autos and buddies. I'm very grateful
+                </p>
+                </div>
+            </div>
+        </section>
+
+        <!--trial-->
+        <section class="trial">
+            <h2>Get Free, Automated and Multi Platform Reminders</h2>
+            <p>We offer you reminders automated by Whatsapp, Email and SMS
+            </p>
+            <a href="" class="btn btn-primary">Join us now</a>
+        </section>
+
 
         <!--Footer-->
         <footer>
@@ -96,14 +164,6 @@
                 <h3 class="logo"><img src="/img/vehdoc.png" alt="">VEHDOC</h3>
                 <p>
                     Our online portal can be accessed by anyone <br> at any time for maximum convenience.</p>
-
-                <div class="footer_image">
-                    <a href="#"><img src="/svg/google-plus-g.svg" alt=""></a>
-                    <a href="#"><img src="/svg/facebook.svg" alt=""></a>
-                    <a href="#"><img src="/svg/linkedin.svg" alt=""></a>
-                    <a href="#"><img src="/svg/twitter.svg" alt=""></a>
-                    <a href="#"><img src="/svg/whatsapp-square.svg" alt=""></a>
-                </div>
             </div>
 
             <div class="other_link">
@@ -126,8 +186,6 @@
             </div>
 
         </footer>
-
-
     </main>
 
 

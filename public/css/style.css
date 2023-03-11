@@ -385,6 +385,14 @@ cardBox .welcomecard .numbers {
 .details .table .thead .table-cell {
     display: table-cell;
     font-weight: 600;
+    padding: 10px;
+}
+
+.details .table .thead .table-row {
+    text-transform: uppercase;
+    display: table-row;
+    background: #cdffc9;
+    padding: 20px 0;
 }
 
 .details .recentOrders .table .table-row {
@@ -392,6 +400,10 @@ cardBox .welcomecard .numbers {
     color: var(--black1);
     cursor: pointer;
     border-bottom: 1px solid rgba(0, 0, 0, 0.01);
+}
+
+.details .recentOrders .table .table-row:nth-child(even) {
+    background: #cdffcd;
 }
 
 .details .recentOrders .table a {
@@ -411,18 +423,6 @@ cardBox .welcomecard .numbers {
 .details .recentOrders .table .table-row .table-cell {
     display: table-cell;
     padding: 10px;
-}
-
-.details .recentOrders .table .table-row .table-cell:last-child {
-    text-align: end;
-}
-
-.details .recentOrders .table .table-row .table-cell:nth-child(2) {
-    text-align: end;
-}
-
-.details .recentOrders .table .table-row .table-cell:nth-child(3) {
-    text-align: center;
 }
 
 
